@@ -46,3 +46,65 @@ def add_task(tasks):
         return
     tasks.append({"done": False, "text": text})
     print("Task added!")
+def mark_task_done(tasks):
+    if not tasks:
+        print("No tasks to mark.")
+        return
+    view_tasks(tasks)
+    try:
+        num = int(input("Enter task number to mark as done: "))
+        if 1 <= num <= len(tasks):
+            tasks[num - 1]["done"] = True
+            print("Task marked as done! ✅")
+        else:
+            print("Invalid number.")
+    except ValueError:
+        print("Please enter a number.")
+
+def delete_task(tasks):
+    if not tasks:
+        print("No tasks to delete.")
+        return
+    view_tasks(tasks)
+    try:
+        num = int(input("Enter task number to delete: "))
+        if 1 <= num <= len(tasks):
+            removed = tasks.pop(num - 1)
+            print(f"Deleted: {removed['text']}")
+        else:
+            print("Invalid number.")
+    except ValueError:
+        print("Please enter a number.")
+def mark_task_done(tasks):
+    if not tasks:
+        print("No tasks to mark.")
+        return
+    view_tasks(tasks)
+    try:
+        num = int(input("Enter task number to mark as done: "))
+        if 1 <= num <= len(tasks):
+            tasks[num - 1]["done"] = True
+            print("Task marked as done! ✅")
+        else:
+            print("Invalid number.")
+    except ValueError:
+        print("Please enter a number.")
+
+def delete_task(tasks):
+    if not tasks:
+        print("No tasks to delete.")
+        return
+    view_tasks(tasks)
+    try:
+        num = int(input("Enter task number to delete: "))
+        if 1 <= num <= len(tasks):
+            removed = tasks.pop(num - 1)
+            print(f"Deleted: {removed['text']}")
+        else:
+            print("Invalid number.")
+    except ValueError:
+        print("Please enter a number.")
+
+
+
+
