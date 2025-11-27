@@ -46,3 +46,34 @@ def add_task(tasks):
         return
     tasks.append({"done": False, "text": text})
     print("Task added!")
+
+def main():
+    tasks = load_tasks()
+
+    while True:
+        show_menu()
+        choice = input("Choose an option (1-5): ").strip()
+
+        if choice == "1":
+            view_tasks(tasks)
+        elif choice == "2":
+            add_task(tasks)
+            save_tasks(tasks)
+        elif choice == "3":
+            # Person B will implement this function
+            mark_task_done(tasks)
+            save_tasks(tasks)
+        elif choice == "4":
+            # Person B will implement this function
+            delete_task(tasks)
+            save_tasks(tasks)
+        elif choice == "5":
+            save_tasks(tasks)
+            print("Goodbye! 👋")
+            break
+        else:
+            print("Invalid choice, try again.")
+
+
+if __name__ == "__main__":
+    main()
